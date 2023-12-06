@@ -2,6 +2,7 @@
 #'
 #' @param name The name of the entity to greet.
 #' @return A greeting as a string.
+#' @export
 #' @examples
 #' hello("E.T.")
 hello <- function(name) {
