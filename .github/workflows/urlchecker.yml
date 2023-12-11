@@ -17,6 +17,7 @@ on:
       - devel
       - pre-release
   workflow_dispatch:
+  # Allow for workflow inheritance
   workflow_call:
 
 concurrency:
