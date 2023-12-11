@@ -2,10 +2,26 @@
 # URLs in source code as well as documentation.
 on:
   push:
-    branches: [main, master]
+    branches:
+      - main
+      - devel
+      - pre-release
   pull_request:
-    branches: [main, master]
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+    branches:
+      - main
+      - devel
+      - pre-release
+  workflow_dispatch:
+  workflow_call:
 
+concurrency:
+  group: links-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 name: urlchecker
 
 jobs:
