@@ -46,11 +46,14 @@ jobs:
 
       - name: Check for valid URLs
         run: |
-          urlchecker::url_check(
+          bad_urls <- nrow(print(urlchecker::url_check(
             path = ".",
             db = NULL,
             parallel = TRUE,
             pool = curl::new_pool(),
             progress = TRUE
-          )
+          )))
+          if (bad_urls > 0) {
+            stop("Looks like a total of ", bad_urls, " URL(s) were found! Please correct them.")
+          }
         shell: Rscript {0}
