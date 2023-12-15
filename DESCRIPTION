@@ -1,5 +1,5 @@
 Package: devops.toolkit
-Title: An R package containing GitHub Actions workflows: https://httpbin.org/status/404
+Title: An R package containing GitHub Actions workflows.
 Version: 0.0.0.9000
 Authors@R:
     person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
